@@ -1,4 +1,4 @@
-kconst Discord = require('discord.js')
+const Discord = require('discord.js')
 exports.run = (client, message, args) => {
 
     let emded = new Discord.RichEmded()
