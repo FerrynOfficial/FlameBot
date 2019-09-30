@@ -27,14 +27,15 @@ fs.readdir('./cmds/', (err, files) => {
     jsfiles.forEach(f => {
         let props = require(`./cmds/${f}`)
         client.commands.set(props.help.name, props);
-        
-   client.on('guildMemberAdd', member =>{
-   const channel = member.guild.channels.find(channel => channel.name === 'добро-пожаловать👋')
-   if(!channel) return
-   var embed = new Discord.RichEmbed()
-   .setDescription('тест бота')
-   .setColor(RANDOM)
-    message.channel.send(embed)
+    })
+
+    client.on('guildMemberAdd', member =>{
+        const channel = member.guild.channels.find(channel => channel.name === 'добро-пожаловать👋')
+        if(!channel) return
+        var embed = new Discord.RichEmbed()
+        .setDescription('тест бота')
+        .setColor(RANDOM)
+        message.channel.send(embed)
     })
 })
 client.on('message', message => {
