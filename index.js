@@ -34,7 +34,7 @@ fs.readdir('./cmds/', (err, files) => {
         if(!channel) return
         var embed = new Discord.RichEmbed()
         .setDescription('тест бота')
-        .setColor(RANDOM)
+        .setColor('RANDOM')
         message.channel.send(embed)
     })
 })
