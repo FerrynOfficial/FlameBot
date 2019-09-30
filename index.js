@@ -29,13 +29,14 @@ fs.readdir('./cmds/', (err, files) => {
         client.commands.set(props.help.name, props);
     })
 
-    client.on('guildMemberAdd', member =>{
+     client.on('guildMemberAdd', member =>{
         const channel = member.guild.channels.find(channel => channel.name === 'добро-пожаловать👋')
         if(!channel) return
         var embed = new Discord.RichEmbed()
-        .setDescription('тест бота')
+        .setTitle('Добро Пожаловать!')
+        .setDescription('Приветствуем, вас, на сервере TheGamers™!  Мы очень рады увидеть вас и надеемся, что наша компания покажется, вам, интересной. В случае проблем и вопросов обращайтесь к Администрации сервера. С уважением TheFerryn')
         .setColor('RANDOM')
-        message.channel.send(embed)
+        channel.send(embed)
     })
 })
 client.on('message', message => {
