@@ -2,7 +2,7 @@
 exports.run = (client, message, args) => {
     const Discord = require('discord.js')
 
-    var embed = new Discord.RichEmded()
+    var embed = new Discord.RichEmbed()
     .setDescription('Меню помощи было выслано вам в ЛС.')
     .setColor('RANDOM')
     message.channel.send(embed)
