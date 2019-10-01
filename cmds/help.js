@@ -17,3 +17,9 @@ exports.run = (client, message, args) => {
     .setColor('#FF5733')
     message.member.send(embed1)
 }
+exports.help = {
+    group: 'general',
+    desc: 'Выдает меню помощи',
+    usage: 'g!help',
+    name:'help'
+ }
