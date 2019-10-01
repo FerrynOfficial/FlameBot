@@ -26,6 +26,7 @@ fs.readdir('./cmds/', (err, files) => {
     console.log(`[COMMANDS] Loaded ${files.length} commannds!`)
     jsfiles.forEach(f => {
         let props = require(`./cmds/${f}`)
+        client.commands.set(props.help.name, props);
     })
 
      client.on('guildMemberAdd', member =>{
