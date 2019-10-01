@@ -1,5 +1,6 @@
-const Discord = require('discord.js')
+
 exports.run = (client, message, args) => {
+const Discord = require('discord.js')
 
     var emded = new Discord.RichEmded()
     .setDescription('Меню помощи было выслано вам в ЛС.')
