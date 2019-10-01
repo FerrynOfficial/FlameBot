@@ -1,13 +1,13 @@
 const Discord = require('discord.js')
 exports.run = (client, message, args) => {
 
-    let emded = new Discord.RichEmded()
+    var emded = new Discord.RichEmded()
     .setDescription('Меню помощи было выслано вам в ЛС.')
     .setColor('RANDOM')
     message.channel.send(embed)
     message.react(':white_check_mark:')
 
-    let embed1 = new Discord.RichEmbed()
+    var embed1 = new Discord.RichEmbed()
     .setTitle('Команды для Учатсников')
     .setDescription('`about, serverinfo, help, ping`')
     .setColor('#27AE60')
