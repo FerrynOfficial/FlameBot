@@ -36,7 +36,6 @@ fs.readdir('./cmds/', (err, files) => {
         .setTitle('Добро Пожаловать!')
         .setDescription(`Приветствуем вас ${member}, на сервере TheGamers™!  Мы очень рады увидеть вас и надеемся, что наша компания покажется, вам, интересной. В случае проблем и вопросов обращайтесь к Администрации сервера. С уважением TheFerryn`)
         .setColor('RANDOM')
-        .setThumbnail('https://gph.is/18hMuOc')
         channel.send(embed)
     })
 })
