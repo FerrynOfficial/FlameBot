@@ -38,13 +38,6 @@ fs.readdir('./cmds/', (err, files) => {
         .setColor('RANDOM')
         channel.send(embed)
     })
-    if (message === 'say'){
-        message.delete()
-        var embed1 = new Discord.RichEmbed()
-        .setColor('RANDOM')
-        .setDescription(args.join(''))
-        message.channel.send(embed1)      
-    }
 })
 client.on('message', message => {
     let msg = message.content.toLowerCase() || message.content.toUpperCase()
