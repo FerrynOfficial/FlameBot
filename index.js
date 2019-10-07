@@ -38,7 +38,7 @@ fs.readdir('./cmds/', (err, files) => {
         .setColor('RANDOM')
         channel.send(embed)
     })
-    if (command === 'say'){
+    if (message === 'say'){
         message.delete()
         var embed1 = new Discord.RichEmbed()
         .setColor('RANDOM')
