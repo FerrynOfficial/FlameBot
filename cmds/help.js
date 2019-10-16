@@ -9,7 +9,7 @@ exports.run = (client, message, args) => {
 
     var embed1 = new Discord.RichEmbed()
     .setTitle('Команды для Администрации')
-    .setDescription('`kick, ban, warn, modinfo`/ntest')
+    .setDescription(`kick, ban, warn, modinfo/ntest)
     .setColor('#FF5733')
     message.member.send(embed1)
 
