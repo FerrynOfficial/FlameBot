@@ -5,7 +5,7 @@ exports.run = (client, message, args) => {
 
     var embed = new Discord.RichEmbed()
     .setTitle('Help Menu / Меню Помощи')
-    .setThubmnail('http://pngimg.com/uploads/question_mark/question_mark_PNG87.png')
+    .setThumbnail('http://pngimg.com/uploads/question_mark/question_mark_PNG87.png')
     .setDescription(`Привет, я GameErr.Bot! Если ты воспользовался командой помощи, значит ты хотел получить всю информацию обо мне. Давай начнём! 
     Я бот сервера TheGamers и разработан исключительно для него. На данный момент у меня не так уж мни много команд, но ты это можешь исправить, кинув идею в лс @TheFerryn™#0775.\nПрефикс: ${client.prefix}`)
     .setColor('RANDOM')
