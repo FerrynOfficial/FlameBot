@@ -9,7 +9,7 @@ client.on('ready', () => {
     client.user.setStatus('dnd')
     client.user.setPresence({
         game:{
-          name:`g!help | На Сервере ''TheGamers''`,
+          name:`f!help | На Сервере ''FlameCommunity 2.0''`,
           type:"PLAYING"
         }
       }) 
