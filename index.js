@@ -14,7 +14,7 @@ client.on('ready', () => {
         }
       }) 
 })
-client.prefix = 'g!'
+client.prefix = 'f!'
 client.commands = new Discord.Collection();
 fs.readdir('./cmds/', (err, files) => {
     if(err) console.log(err)
