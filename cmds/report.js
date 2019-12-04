@@ -16,7 +16,6 @@ exports.run = (client, message, args) => {
     var reportsChannel = message.guild.channels.find(`name`, 'reports')
     if(!reportsChannel) return message.reply('error')
 
-    message.delete.catch(O_o=>{})
     reportsChannel.send(rEmbed)
 }
 exports.help = {
