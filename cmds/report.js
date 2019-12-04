@@ -1,4 +1,4 @@
-xports.run = (client, message, args) => {
+exports.run = (client, message, args) => {
     const Discord = require('discord.js')
     const fs = require('fs')
     const moment = require('moment')
