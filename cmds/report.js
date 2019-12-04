@@ -14,7 +14,7 @@ exports.run = (client, message, args) => {
     .addField('Время', message.createdAt)
     .addField('Причина', reason)
 }
-    var reportsChannel = guild.channels.find(channel => channel.id === '651854944306987019')
+    var reportsChannel = message.guild.channels.find(`name`, 'reports')
     if(!reportsChannel) return message.reply('error')
 
     message.delete.catch(O_o=>{})
