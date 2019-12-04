@@ -1,4 +1,4 @@
-exports.run = (client, message, args) => {
+xports.run = (client, message, args) => {
     const Discord = require('discord.js')
     const fs = require('fs')
     const moment = require('moment')
@@ -12,7 +12,7 @@ exports.run = (client, message, args) => {
     .addField('Участник',`${rUser}`)
     .addField('Пожаловался',`${message.author}`)
     .addField('Канал', message.channel)
-    .addField('Время',(message.createdAt).format('HH:MM DD-MM-YY'), true)
+    .addField('Время',require('moment')(message.createdAt).format('HH:MM DD-MM-YY'), true)
     .addField('Причина', reason)
     var reportsChannel = message.guild.channels.find(`name`, 'reports')
     if(!reportsChannel) return message.reply('error')
