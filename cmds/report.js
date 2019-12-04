@@ -3,7 +3,7 @@ exports.run = (client, message, args) => {
     const fs = require('fs')
     var rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!rUser) return message.reply('Error')
-    var reason = args.slice.join(' ').slice('22')
+    var reason = args.slice(1).join(' ')
 
     var rEmbed = new Discord.RichEmbed()
     .setDescription('Reports | Жалобы')
