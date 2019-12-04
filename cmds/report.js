@@ -6,17 +6,18 @@ exports.run = (client, message, args) => {
     var reason = args.slice(1).join(' ')
 
     var rEmbed = new Discord.RichEmbed()
-    .setDescription('Reports | Жалобы')
+    .setDescription('**Reports | Жалобы**')
     .setColor('#FF0000')
     .addField('Участник',`${rUser}`)
     .addField('Пожаловался',`${message.author}`)
     .addField('Канал', message.channel)
-    .addField('Время', message.createdAt)
+    .addField('Время', message.createdAt.format('HH:MM DD-MM-YY'), true)
     .addField('Причина', reason)
     var reportsChannel = message.guild.channels.find(`name`, 'reports')
     if(!reportsChannel) return message.reply('error')
-
+    
     reportsChannel.send(rEmbed)
+    return message.reply('Жалоба была успешно отправлена!')
 }
 exports.help = {
     name: 'report'
