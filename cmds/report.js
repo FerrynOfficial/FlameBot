@@ -13,9 +13,9 @@ exports.run = (client, message, args) => {
     .addField('Канал', message.channel)
     .addField('Время', message.createdAt)
     .addField('Причина', reason)
-}
     var reportsChannel = message.guild.channels.find(`name`, 'reports')
     if(!reportsChannel) return message.reply('error')
 
     message.delete.catch(O_o=>{})
     reportsChannel.send(rEmbed)
+}
