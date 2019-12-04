@@ -19,3 +19,6 @@ exports.run = (client, message, args) => {
     message.delete.catch(O_o=>{})
     reportsChannel.send(rEmbed)
 }
+exports.help = {
+    name: 'report'
+ }
