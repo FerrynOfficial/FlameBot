@@ -42,3 +42,6 @@ exports.run = (client, message, args) => {
     warnChannel.send(embed2)
     var warnChannel = message.guild.channels.find(`name`, 'warns')
 }
+exports.help = {
+    name: 'warn'
+ }
