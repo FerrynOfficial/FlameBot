@@ -30,7 +30,7 @@ exports.run = (client, message, args) => {
     .setColor('FF0000')
     .setDescription(`${warnmember.user.tag} был предупрежден Модератором ${message.author}!\n Причина: ${reason}`)
     message.channel.send(embed)
-
+    var warnChannel = message.guild.channels.find(`name`, 'warns')
     var embed2 = new Discord.RichEmbed()
     .setTitle('**Предупреждение | Logs**')
     .setColor('FF0000')
@@ -40,7 +40,6 @@ exports.run = (client, message, args) => {
     .addField('Время',require('moment')(message.createdAt).format('HH:MM DD-MM-YY'), true)
     .addField('Причина', `${reason}`)
     warnChannel.send(embed2)
-    var warnChannel = message.guild.channels.find(`name`, 'warns')
 }
 exports.help = {
     name: 'warn'
