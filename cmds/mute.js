@@ -28,5 +28,5 @@ exports.run = (client, message, args) => {
     },ms(muteTime))
 }
 exports.help = {
-    name: mute
+    name: 'mute'
 }
