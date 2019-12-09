@@ -9,6 +9,7 @@ exports.run = (client, message, args) => {
     .setAuthor(message.author.username, message.author.avatarURL)
     .setColor('RANDOM')
     .setDescription(replies[result])
+    .setThumbnail('https://cdn.discordapp.com/attachments/627452935676100618/653619763783925810/image0.png')
     message.channel.send(embed)
 }
 exports.help = {
