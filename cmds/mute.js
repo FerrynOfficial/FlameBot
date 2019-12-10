@@ -2,7 +2,7 @@ exports.run = (client, message, args) => {
     const Discord = require('discord.js')
     const ms = require('ms')
     if(!message.member.hasPermission('MANAGE_MEMBERS')) return message.reply('У вас нет прав!')
-    var user = message.guild.member(message.mentions.users.first() || message.guild.memners.get(args[0]))
+    var user = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]))
     if(!user) return message.reply('Укажите пользователя!')
     var muteRole = message.guild.roles.find('name', 'Muted')
     if(!muteRole) return message.reply('Создайте роль под названием Muted!')
