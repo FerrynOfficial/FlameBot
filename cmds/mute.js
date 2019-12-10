@@ -1,4 +1,4 @@
-exports.run = (client, message, args) => {
+exports.run = (await,client, message, args) => {
     const Discord = require('discord.js')
     const ms = require('ms')
     if(!message.member.hasPermission('MANAGE_MEMBERS')) return message.reply('У вас нет прав!')
