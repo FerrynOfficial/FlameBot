@@ -3,7 +3,6 @@ const Discord = require('discord.js')
 const moment = require('moment')
 var user = message.mentions.users.first() || message.author;
 var userinfo = {};
-userinfo.avatar = user.AvatarURL()
 userinfo.name = user.username;
 userinfo.discrim = `#${user.discriminator}`
 userinfo.id = user.id
@@ -13,7 +12,6 @@ userinfo.joined = moment.utc(message.guild.members.get(user.id).user.joinedAt).f
 
 var embed = new Discord.RichEmbed()
 .setAuthor(user.tag, userinfo.avatar)
-.setThumbnail(userinfo.avatar)
 .addField('Никнейм', userinfo.name, true)
 .addField('Тэг', userinfo.discrim, true)
 .addField('ID', userinfo.id, true)
