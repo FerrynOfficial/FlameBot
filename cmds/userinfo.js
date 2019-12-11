@@ -3,13 +3,13 @@ const Discord = require('discord.js')
 const moment = require('moment')
 var user = message.mentions.users.first() || message.author;
 var userinfo = {};
-userinfo.avatar = user.displayAvatarURL()
+userinfo.avatar = user.AvatarURL()
 userinfo.name = user.username;
 userinfo.discrim = `#${user.discriminator}`
 userinfo.id = user.id
 userinfo.status = user.precense.status
-userinfo.registered = moment.utc(m.guild.members.get(user.id).user.createdAt).format('dddd, MMMM Do, YYYY');
-userinfo.joined = moment.utc(m.guild.members.get(user.id).user.joinedAt).format('dddd, MMMM Do, YYYY');
+userinfo.registered = moment.utc(message.guild.members.get(user.id).user.createdAt).format('dddd, MMMM Do, YYYY');
+userinfo.joined = moment.utc(message.guild.members.get(user.id).user.joinedAt).format('dddd, MMMM Do, YYYY');
 
 var embed = new Discord.RichEmbed()
 .setAuthor(user.tag, userinfo.avatar)
