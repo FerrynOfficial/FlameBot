@@ -1,6 +1,7 @@
 exports.run = async (client, message, args) => {
 const Discord = require('discord.js')
 const moment = require('moment')
+var user = m.mentions.users.first() || m.author;
 var userinfo = {};
 userinfo.avatar = user.displayAvatarURL()
 userinfo.name = user.username;
