@@ -1,14 +1,13 @@
 exports.run = (client, message, args) => {
     const Discord = require('discord.js')
     const fs = require('fs')
-    var embed = new Discord.RichEmbed()
-    .setColor('RANDOM')
-    .setDescription(args.join(''))
-    message.channel.send(embed)
-}
-exports.help = {
-    group: 'general',
-    desc: 'Говорит сообщение',
-    usage: 'g!say',
-    name: 'say'
- }
+    
+    var text = message.content.split(' ').slice(1).join(' ')
+        if(!text) return message.reply('error')
+        var embed = new Discord.RichEmbed()
+        .setDescription(text)
+        message.channel.send(embed)}
+        exports.help = {
+            name:"say"
+       }
+        
