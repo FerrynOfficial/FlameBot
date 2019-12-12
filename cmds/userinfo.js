@@ -1,23 +1,16 @@
 exports.run = async (client, message, args) => {
 const Discord = require('discord.js')
 const moment = require('moment')
-var user = message.mentions.users.first() || message.author;
-var userinfo = {};
-userinfo.name = user.username;
-userinfo.discrim = `#${user.discriminator}`
-userinfo.id = user.id
-userinfo.status = user.precense.status
-userinfo.registered = moment.utc(message.guild.members.get(user.id).user.createdAt).format('dddd, MMMM Do, YYYY');
-userinfo.joined = moment.utc(message.guild.members.get(user.id).user.joinedAt).format('dddd, MMMM Do, YYYY');
+var member = message.mentions.users.first() || message.author;
 
 var embed = new Discord.RichEmbed()
-.setAuthor(user.tag, userinfo.avatar)
-.addField('Никнейм', userinfo.name, true)
-.addField('Тэг', userinfo.discrim, true)
-.addField('ID', userinfo.id, true)
-.addField('Статус', userinfo.status, true)
-.addField('Зарегистрирован', userinfo.registered, true)
-.addField('На Сервере', userinfo.joined, true)
+.setTitle('Информация о Учатснике')
+.addField('Никнейм', member.username + '#' + member.discriminator)
+.addField('ID', member.id)
+.addField('Зарегистрирован в Discord', member.createdAt)
+.addField('На сервере', member.joinedAt)
+.setThumbnail(member.avatarURL)
+.setColor('RANDOM')
 message.channel.send(embed)
 }
 exports.help = {
