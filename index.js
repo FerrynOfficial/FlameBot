@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const fs = require('fs')
 global.ms = require('ms')
 const superagent = require('superagent')
-client.login(procces.env.BOT_TOKEN)
+client.login(process.env.BOT_TOKEN)
 client.owner = '525003205394825257';
 client.on('ready', () => {
 
