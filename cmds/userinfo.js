@@ -6,10 +6,9 @@ var member = message.mentions.users.first() || message.author;
 var embed = new Discord.RichEmbed()
 .setTitle('Информация о Учатснике')
 .addField('Никнейм', member.username + '#' + member.discriminator)
-.addField('ID', member.id)
-.addField('Зарегистрирован в Discord', member.createdAt)
-.addField('На сервере', member.joinedAt)
-.setThumbnail(member.avatarURL)
+.addField('ID Участника', member.id)
+.addField('Зарегистрирован в Discord', require('moment')(member.createdAt).format('HH:MM DD-MM-YY'), true)
+.addField('На сервере',  require('moment')(member.joinedAt).format('HH:MM DD-MM-YY'), true)
 .setColor('RANDOM')
 message.channel.send(embed)
 }
