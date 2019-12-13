@@ -1,6 +1,6 @@
 exports.run = (client, message, args) => {
     const Discord = require('discord.js')
-    var idea = args.slice(1).join(' ')
+    var idea = args.slice(0).join(' ')
     if(!idea) return message.reply('Вы не указали идею!')
     var embed = new Discord.RichEmbed()
     .setTitle('Идея')
