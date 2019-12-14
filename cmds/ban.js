@@ -7,12 +7,12 @@ exports.run = (client, message, args) => {
         message.reply('**У вас нет прав на это.**')
         return
     }
-    var kickmember = message.guild.member(message.mentions.users.first())
-    if(!kickmember) {
+    var banmember = message.guild.member(message.mentions.users.first())
+    if(!banmember) {
         message.reply('**Пользователь не найден**\n`f!ban @User Причина`')
         return
     }
-    if(kickmember.permissions.has('BAN_MEMBERS')) {
+    if(banmember.permissions.has('BAN_MEMBERS')) {
         message.reply('**Данный пользователь имеет права равные вам.**')
         return
     }
@@ -22,8 +22,12 @@ exports.run = (client, message, args) => {
         return
     }
     message.guild.members.get(kickmember.id).ban(reason)
-    message.reply(`**Вы успешно забанили ${kickmember.user.tag}!**`)
+    var embed = new Discord.RichEmbed()
+    .setTitle('Бан')
+    .setDescription(`${banmember.user.tag} был забанен модератором ${message.author}!\nПричина: ${reason}`)
+    .setColor('FF0000')
+    message.channel.send(embed)
 }
 exports.help = {
-name: 'ban'
+   name: 'ban'
 }
