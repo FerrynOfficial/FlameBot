@@ -28,7 +28,7 @@ exports.run = (client, message, args) => {
     var embed = new Discord.RichEmbed()
     .setTitle('Предупреждение')
     .setColor('FF0000')
-    .setDescription(`${warnmember.user.tag} был предупрежден Модератором ${message.author}!\n Причина: ${reason}`)
+    .setDescription(`${warnmember} был предупрежден Модератором ${message.author}!\nПричина: **${reason}**`)
     message.channel.send(embed)
     var warnChannel = message.guild.channels.find(`name`, 'warns')
     var embed2 = new Discord.RichEmbed()
