@@ -8,6 +8,7 @@ exports.run = (client, message, args) => {
     .setDescription(giveaway)
     .addField('Приз', present, true)
     .setFooter('Для того что бы участвовать, нажми на реакцию ниже!')
+    .setColor('RANDOM')
     message.channel.send({ embed }).then((message) => {
         message.react('👍')
     });
