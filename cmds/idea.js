@@ -7,9 +7,9 @@ exports.run = (client, message, args) => {
     .setDescription(idea)
     .setColor('RANDOM')
     .setFooter(message.author.username, message.author.avatarURL)
-    message.channel.send(embed)
-    message.react('👍')
-    message.react('👎')
+    message.channel.send({ embed }).then((message) => {
+        message.react('👍')
+            .then(() => message.react('👎'))
 }
 exports.help = {
     name: 'idea'
