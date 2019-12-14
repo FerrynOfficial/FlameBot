@@ -13,6 +13,7 @@ exports.run = (client, message, args) => {
     ideasChannel.channel.send({ embed }).then((message) => {
         message.react('👍')
             .then(() => message.react('👎'))
+            return message.reply('Идея была успешно отправлена!')
         });
     
 }
