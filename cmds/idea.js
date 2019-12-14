@@ -8,8 +8,8 @@ exports.run = (client, message, args) => {
     .setColor('RANDOM')
     .setFooter(message.author.username, message.author.avatarURL)
     message.channel.send(embed)
-    message.react(':thumbsup:')
-    message.react(':thumbsdown:')
+    message.react('👍')
+    message.react('👎')
 }
 exports.help = {
     name: 'idea'
