@@ -7,7 +7,10 @@ exports.run = (client, message, args) => {
     .setDescription(idea)
     .setColor('RANDOM')
     .setFooter(message.author.username, message.author.avatarURL)
-    message.channel.send({ embed }).then((message) => {
+    var ideasChannel = message.guild.channels.find(`name`, '🎅🏻╰📑╮идеи')
+    if(!ideasChannel) return message.reply('error')
+
+    ideasChannel.channel.send({ embed }).then((message) => {
         message.react('👍')
             .then(() => message.react('👎'))
         });
