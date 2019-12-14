@@ -10,7 +10,7 @@ exports.run = (client, message, args) => {
     var ideasChannel = message.guild.channels.find(`name`, '🎅🏻╰📑╮идеи')
     if(!ideasChannel) return message.reply('error')
 
-    ideasChannel.message.send({ embed }).then((message) => {
+    message.ideasChannel.send({ embed }).then((message) => {
         message.react('👍')
             .then(() => message.react('👎'))
             return message.reply('Идея была успешно отправлена!')
