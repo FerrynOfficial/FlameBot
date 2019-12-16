@@ -13,8 +13,5 @@ exports.run = (client, message, args) => {
     message.channel.send(embed)
    }
    exports.help = {
-    group: 'general',
-    desc: 'Показывает информацию о сервере',
-    usage: 'g!serverinfo',
     name: 'serverinfo'
    }
