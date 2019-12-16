@@ -7,8 +7,6 @@ exports.run = (client, message, args) => {
     .setColor('RANDOM')
     message.channel.send(embed)
    }
-   exports.help = {group: 'general',
-    desc: 'Покакзывает пинг',
-    usage: 'g!ping',
+   exports.help = {
     name: 'ping'
  }
