@@ -7,8 +7,9 @@ exports.run = (client, message, args) => {
         var embed = new Discord.RichEmbed()
         .setDescription(text)
         .setColor('RANDOM')
-        message.channel.send(embed)}
+        message.channel.send(embed)
         message.delete()
+       }      
         exports.help = {
             name:"say"
        }
