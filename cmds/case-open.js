@@ -11,7 +11,7 @@ exports.run = (client, message, args) => {
     .setDescription(replies[result])
     .setThumbnail('https://cdn.discordapp.com/attachments/627452935676100618/653619763783925810/image0.png')
     message.channel.send(embed)
-    user.removeRole(caseRole)
+    message.author.removeRole(caseRole)
 }
 exports.help = {
     name: 'open-case'
