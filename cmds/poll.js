@@ -6,7 +6,7 @@ exports.run = (client, message, args) => {
     .setTitle('📊Опрос / Голосование')
     .setDescription(poll)
     .setColor('RANDOM')
-    .setFooter(message.author.username, message.author.avatarURL, '| Для того что бы проголосовать нажмите на одну из реакций ниже!')
+    .setFooter('Опрос от' ,message.author.username, message.author.avatarURL)
     message.channel.send({ embed }).then((message) => {
         message.react('👍')
             .then(() => message.react('👎'))
