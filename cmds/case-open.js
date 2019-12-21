@@ -17,7 +17,7 @@ exports.run = (client, message, args) => {
     var embed2 = new Discord.RichEmbed()
     .setTitle('Донат Кейс')
     .setDescription(`Пользователь ${author} открыл донат кейс и выиграл ${replies[result]}.`)
-    logs.channel.send(embed2)
+    logs.send(embed2)
 }
 exports.help = {
     name: 'open-case'
