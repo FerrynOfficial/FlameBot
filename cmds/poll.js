@@ -11,6 +11,7 @@ exports.run = (client, message, args) => {
         message.react('👍')
             .then(() => message.react('👎'))
         });
+    message.delete()
 }
 exports.help = {
     name: 'poll'
