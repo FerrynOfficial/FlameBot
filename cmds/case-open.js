@@ -17,7 +17,7 @@ exports.run = (client, message, args) => {
     if(!logs) return message.reply('Error')
     var embed2 = new Discord.RichEmbed()
     .setTitle('Донат Кейс | Logs')
-    .setDescription(`Пользователь ${author} открыл донат кейс и выиграл ${replies[result]}.`)
+    .setDescription(`${replies[result]}`)
     .setColor('FF0000')
     .addField('Канал', message.channel, true)
     logs.send(embed2)
