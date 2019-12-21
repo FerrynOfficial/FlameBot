@@ -20,7 +20,6 @@ exports.run = (client, message, args) => {
     .setDescription(`Пользователь ${author} открыл донат кейс и выиграл ${replies[result]}.`)
     .setColor('FF0000')
     .addField('Канал', message.channel, true)
-    .addField('Время',require('moment')(message.createdAt).format('HH:MM DD-MM-YY'), true)
     logs.send(embed2)
 }
 exports.help = {
