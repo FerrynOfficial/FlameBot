@@ -13,7 +13,7 @@ exports.run = (client, message, args) => {
     .addField('Команды для Участников', cmds, true)
     .addField('Команды для Модераторов', modcmds, true)
     .addField('Развлекательные Команды', funcmds, true)
-    .setFooter('В скором времени будет добавлено больше команд!', true)
+    .setFooter('В скором времени будет добавлено больше команд!')
     message.member.send(embed)
     var embed2 = new Discord.RichEmbed()
     .setDescription(' Меню помощи было выслано вам в личные сообщения')
