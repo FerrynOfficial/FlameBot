@@ -20,3 +20,5 @@ exports.run = (client, message, args) => {
     logs.channel.send(embed2)
 }
 exports.help = {
+    name: 'open-case'
+}
