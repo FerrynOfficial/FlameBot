@@ -3,7 +3,7 @@ exports.run = (client, message, args) => {
     var embed = new Discord.RichEmbed()
     .setAuthor(message.author.username, message.author.avatarURL)
     .setTitle('Pong!:ping_pong: ')
-    .addField ('Ваш Пинг', `**${client.ping}ms**`)
+    .addField ('Пинг', `**${client.ping}ms**`)
     .setColor('RANDOM')
     message.channel.send(embed)
    }
