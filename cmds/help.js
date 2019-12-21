@@ -12,7 +12,7 @@ exports.run = (client, message, args) => {
     .addField('Команды для Участников', cmds, true)
     .addField('Команды для Модераторов', modcmds, true)
     .addField('Развлекательные Команды', funcmds, true)
-    .setFooter('В скором времени будет добавлено больше команд!', true)
+    .setFooter('В скором времени будет добавлено больше команд!')
     .setThumbnail('https://cdn.discordapp.com/avatars/657274192655417358/0fe339d420b930cfda52195cc9bb6bfb.png?size=512')
     message.member.send(embed)
     var embed2 = new Discord.RichEmbed()
