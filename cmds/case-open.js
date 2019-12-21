@@ -1,6 +1,7 @@
 exports.run = (client, message, args) => {
     const Discord = require('discord.js')
     const fs = require('fs')
+    const moment = require('moment')
     var author = message.author
     var caseRole = message.member.roles.get('653581785929875475')
     if(!caseRole) return message.reply('У вас нету кейсов для открытия!')
@@ -15,10 +16,12 @@ exports.run = (client, message, args) => {
     var logs = message.guild.channels.get('633216142286127114')
     if(!logs) return message.reply('Error')
     var embed2 = new Discord.RichEmbed()
-    .setTitle('Донат Кейс')
-    .setDescription(`${replies[result]}`)
+    .setTitle('Донат Кейс | Logs')
+    .setDescription(`Пользователь ${author} открыл донат кейс и выиграл ${replies[result]}.`)
+    .setColor('FF0000')
+    .addField('Канал', message.channel, true)
+    .addField('Время', require('moment').format('HH:MM DD-MM-YY'), true)
     logs.send(embed2)
 }
 exports.help = {
     name: 'open-case'
-}
