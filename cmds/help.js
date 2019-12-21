@@ -1,13 +1,19 @@
 
+
 exports.run = (client, message, args) => {
     const Discord = require('discord.js')
     const fs = require('fs')
     const moment = require('moment')
+    var funcmds = ['`coin`', '`random`', '`8ball`','`iq`' ]
+    var modcmds = ['`warn`', '`kick`', '`ban`', '`purge`', '`mute`', '`dm`']
+    var cmds = ['`ping`', '`poll`', '`serverinfo`', '`about`', '`report`']
     var embed = new Discord.RichEmbed()
     .setTitle('**Справочник Команд**')
     .setColor('RANDOM')
-    .setDescription('**Основные Команды**\n\n`serverinfo`- Показывает информацию о сервере\n`about`- Показывает информацию о боте\n`ping`- Показывает ваш пинг\n`report`- Пожаловаться на участника\n`open-case`- Открыть донат кейс\n`userinfo`- Получить информацию о участнике\n\n**Команды для Модераторов**\n\n`kick`- Кикает участника\n`ban`- Банит участника\n`warn`- Выдает предупреждение\n`purge`- Очищает чат от сообщений\n`dm`- Отправляет участнику сообщение в ЛС\n\n**Развлекательные Команды**\n\n`8Ball`- Дает ответ на любой вопрос\n`iq`- Показывает ваш IQ\n`coin`- Подбросить монетку\n`random`- Рандомное число от 1 до 10')
-    .setFooter('В скором времени будет добавлено больше команд!',)
+    .addField('Команды для Участников', cmds, true)
+    .addField('Команды для Модераторов', modcmds, true)
+    .addField('Развлекательные Команды', funcmds, true)
+    .setFooter('В скором времени будет добавлено больше команд!', true)
     message.member.send(embed)
     var embed2 = new Discord.RichEmbed()
     .setDescription(' Меню помощи было выслано вам в личные сообщения')
