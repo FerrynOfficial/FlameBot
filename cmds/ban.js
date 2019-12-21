@@ -21,7 +21,7 @@ exports.run = (client, message, args) => {
         message.reply('**Укажите причину.**')
         return
     }
-    message.guild.members.get(kickmember.id).ban(reason)
+    message.guild.members.get(banmember.id).ban(reason)
     var embed = new Discord.RichEmbed()
     .setTitle('Бан')
     .setDescription(`${banmember.user.tag} был забанен модератором ${message.author}!\nПричина: ${reason}`)
