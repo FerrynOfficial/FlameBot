@@ -6,6 +6,7 @@ exports.run = (client, message, args) => {
     .setDescription(emoji[result])
     .setColor('RANDOM')
     message.channel.send(embed)
+    message.delete();
 }
 exports.help = {
     name: 'emoji'
