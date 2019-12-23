@@ -10,7 +10,7 @@ client.on('ready', () => {
 
     client.user.setStatus('dnd')
     if (config.activity.streaming == true) {
-        client.user.setActivity('на FlameCommunity 2.0 | f!help', {url: 'https://twitch.tv/username'})
+        client.user.setActivity('на FlameCommunity 2.0 | Слушает f!help', {url: 'https://twitch.tv/username'})
     }
 })
 client.prefix = 'f!'
