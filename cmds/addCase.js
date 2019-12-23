@@ -1,15 +1,14 @@
-exports.run = (client, message, args) => {
-    const Discord = require('discord.js')
-    var author = message.mentions.users.first() || message.author;
-    if(!message.member.permissions.has('ADMINISTRATOR')) return message.reply('У Вас нет прав!')
-    var caseRole = message.guild.roles.find('653581785929875475')
-    if(!caseRole) return message.reply('Роль не найдена!')
-    var embed = new Discord.RichEmbed()
-    .setTitle('Выдача Донат Кейса')
-    .setDescription(`Администратор ${message.author} выдал участнику ${author} Донат Кейс!`)
-    .setColor('FF0000')
-    message.channel.send(embed).then(author.addRole(caseRole))
-}
+const Discord = require("discord.js");
+module.exports.run = async (bot, message, args) => {
+let avtor = message.mentions.users.first() || message.author;
+let role = member.guild.roles.find(r => r.name === "DonateCase");
+    avtor.addRole(role);
+    let result = new Discord.RichEmbed()
+    .setTitle('Выдача роли')
+    .addField('Подробнее:',`Участнику ${avtor} выдали роль ${role}`)
+    .setColor('#00ffff')
+message.channel.send(result)
 exports.help = {
-    name: 'addCase'
+    name:"addrole"
+
 }
