@@ -8,6 +8,7 @@ let role = member.guild.roles.find(r => r.name === "DonateCase");
     .addField('Подробнее:',`Участнику ${avtor} выдали роль ${role}`)
     .setColor('#00ffff')
 message.channel.send(result)
+}
 exports.help = {
-    name: "addrole"
+    name: 'addrole'
 }
