@@ -1,21 +1,19 @@
-exports.run = async(client, message, args) => {
-    const Discord = require('discord.js')
-    if(!message.member.hasPermission('MANAGE_ROLES')) return message.reply('У вас нет прав!')
-    var rMember = message.guild.member(message.metions.users.first()) || message.guild.members.get(args[0])
-    if(!rMember) return message.reply('Пользователь не найден!')
-    var role = args.join(" ").slice(22)
-    if(!role) return message.reply('Укажите роль!')
-    var gRole = message.guild.roles.find(`name`, role)
-    if(!gRole) return message.reply('Роль не найдена!')
-
-    if(rMember.roles.has(gRole.id))
-    await(rMember.addRole(gRole.id))
-    var embed = new Discord.RichEmbed()
+const Discord = require('discord.js');
+module.exports.run = async (client,message,args) => {
+var role = message.mentions.roles.first();
+var member = message.mentions.members.first();
+var arg = new Array()
+arg[0] = member
+arg[1] = role
+if(!arg[0]) return message.channel.send('Укажите участника')
+if(!arg[1])return message.channel.send('Укажите роль')
+    let embed = new Discord.RichEmbed()
     .setTitle('Выдача роли')
-    .addField('Подробнее:',`Участнику ${rMember} выдали роль ${gRole}`)
+    .addField('Подробнее:',`Участнику ${member} выдали роль ${role}`)
     .setColor('FF0000')
-    message.channel.send(embed)
+message.channel.send(embed)
+await(member.addRole(role))
 }
-exports.help = {
-    name: 'addRole'
+module.exports.help = {
+    name: 'addrole'
 }
