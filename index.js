@@ -8,12 +8,9 @@ client.owner = '525003205394825257';
 client.on('ready', () => {
 
     client.user.setStatus('dnd')
-    client.user.setPresence({
-        game:{
-          name:`f!help | Version 1.0`,
-          type:"PLAYING"
-        }
-      }) 
+ if (config.activity.watching == true) {
+client.user.setActivity('за участниками | f!help')
+ }
 })
 client.prefix = 'f!'
 client.commands = new Discord.Collection();
