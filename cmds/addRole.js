@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 module.exports.run = async (client,message,args) => {
 var role = message.mentions.roles.first();
 var member = message.mentions.members.first();
-if(!message.member.hasPermission('MANAGE_MEMBERS')) return message.reply('У вас нет прав!')
+if(!message.member.permissions.has('MANAGE_MEMBERS')) return message.reply('У вас нет прав!')
 var arg = new Array()
 arg[0] = member
 arg[1] = role
