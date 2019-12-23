@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (client, message, args) => {
 let avtor = message.mentions.users.first() || message.author;
 let role = member.guild.roles.find(r => r.name === "DonateCase");
     avtor.addRole(role);
