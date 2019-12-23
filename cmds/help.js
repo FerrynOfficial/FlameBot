@@ -19,6 +19,7 @@ exports.run = (client, message, args) => {
     .setDescription(' Меню помощи было выслано вам в личные сообщения')
     .setColor('RANDOM')
     message.channel.send(embed2)
+    message.react('<:tick:651067602327568385>')
 }
 exports.help = {
     name: 'help'
