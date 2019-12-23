@@ -3,6 +3,7 @@ exports.run = (client, message, args) => {
     var author = message.mentions.users.first() || message.author;
     if(!message.member.permissions.has('ADMINISTRATOR')) return message.reply('У Вас нет прав!')
     var caseRole = message.guild.roles.find('name', 'DonateCase')
+    if(!caseRole) return message.reply('Роль не найдена!')
     var embed = new Discord.RichEmbed()
     .setTitle('Выдача Донат Кейса')
     .setDescription(`Администратор ${message.author} выдал участнику ${author} Донат Кейс!`)
