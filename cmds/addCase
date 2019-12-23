@@ -2,7 +2,7 @@ exports.run = (client, message, args) => {
     const Discord = require('discord.js')
     var author = message.mentions.users.first() || message.author;
     if(!message.member.permissions.has('ADMINISTRATOR')) return message.reply('У Вас нет прав!')
-    var caseRole = message.guild.roles.find('name', 'DonateCase')
+    var caseRole = message.guild.roles.find('653581785929875475')
     if(!caseRole) return message.reply('Роль не найдена!')
     var embed = new Discord.RichEmbed()
     .setTitle('Выдача Донат Кейса')
