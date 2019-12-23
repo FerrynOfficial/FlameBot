@@ -9,9 +9,9 @@ client.owner = '525003205394825257';
 client.on('ready', () => {
 
     client.user.setStatus('dnd')
- if (config.activity.watching == true) {
-client.user.setActivity('за участниками | f!help')
- }
+    if (config.activity.streaming == true) {
+        client.user.setActivity('на FlameCommunity 2.0 | f!help', {url: 'https://twitch.tv/username'})
+    }
 })
 client.prefix = 'f!'
 client.commands = new Discord.Collection();
