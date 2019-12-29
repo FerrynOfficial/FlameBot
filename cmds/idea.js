@@ -2,7 +2,7 @@ exports.run = async(client, message, args) => {
     const Discord = require('discord.js')
     var embed = new Discord.RichEmbed()
     var embed1 = new Discord.RichEmbed()
-    var iChannel = message.guild.channels.get('645003953960124457')
+    var iChannel = message.guild.channels.get('660868212623147008')
     var iText = args.slice(0).join(" ")
 
     if(!iChannel) {
