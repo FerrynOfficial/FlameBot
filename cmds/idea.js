@@ -23,8 +23,8 @@ exports.run = async(client, message, args) => {
             .then(() => message.react('👎'))
         });
 
-    embed.setDescription('**Идея была успешно отправлена!**')
-    embed.setColor('006400')
+    embed1.setDescription('**Идея была успешно отправлена!**')
+    embed1.setColor('006400')
     message.channel.send(embed1)
     message.delete();
 }
