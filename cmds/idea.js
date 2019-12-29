@@ -26,6 +26,7 @@ exports.run = async(client, message, args) => {
     embed.setDescription('**Идея была успешно отправлена!**')
     embed.setColor('006400')
     message.channel.send(embed1)
+    message.delete();
 }
 exports.help = {
     name: 'idea'
