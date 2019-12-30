@@ -14,7 +14,7 @@ exports.run = async(client, message, args) => {
     embed.setDescription(`**Пользователь ${author} открыл Денежный Кейс, и выиграл ${replies[result]}**`)
     embed.setColor('RANDOM')
     embed.setThumbnail('https://cdn.discordapp.com/attachments/660855844010983434/661249051626438686/007-money-bag.png')
-    message.channel.send(embed).then(author.removeRole(caseRole))
+    message.channel.send(embed).then(message.member.removeRole(caseRole))
 
     var logs = message.guild.channels.get('633216142286127114')
     if(!logs) {
