@@ -14,11 +14,10 @@ exports.run = async(client, message, args) => {
     embed.setDescription(`**Пользователь ${author} открыл Денежный Кейс, и выиграл ${replies[result]}**`)
     embed.setColor('RANDOM')
     embed.setThumbnail('https://cdn.discordapp.com/attachments/660855844010983434/661249051626438686/007-money-bag.png')
-    message.channel.send(embed)
-    await author.removeRole(caseRole)
+    message.channel.send(embed).then(author.removeRole(caseRole))
 
-    var logsChannel = message.guild.channels.get('633216142286127114')
-    if(!logsChannel) {
+    var logs = message.guild.channels.get('633216142286127114')
+    if(!logs) {
         message.channel.send('Channel is undefined!')
         return
     }
@@ -27,7 +26,7 @@ exports.run = async(client, message, args) => {
     .setTitle('Денежный Кейс | Logs')
     .setDescription(`**Пользователь ${author} открыл денежный кейс и выиграл ${replies[result]} монет.**`)
     .setColor('RANDOM')
-    logsChannel.send(embed1)
+    logs.send(embed1)
 
 
 }
