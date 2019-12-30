@@ -33,9 +33,9 @@ fs.readdir('./cmds/', (err, files) => {
         if(!channel) return
         var embed = new Discord.RichEmbed()
         .setTitle('Добро Пожаловать!')
-        .setDescription(`Приветствуем вас ${member}, на сервере FlameCommunity 2.0! Желаю тебе хорошего времяпровождения!`)
+        .setDescription(`**Приветствуем вас ${member}, на сервере FlameCommunity 2.0! Желаю тебе хорошего времяпровождения!**`)
         .setColor('RANDOM')
-        .setImage('https://cdn.discordapp.com/attachments/616315208251605005/616319462349602816/Tw.gif')
+        .setImage('https://cdn.discordapp.com/attachments/660855844010983434/661154288755539968/welcome.gif')
         channel.send(embed)
         var embed2 = new Discord.RichEmbed()
         .setTitle('Добро пожаловать!')
