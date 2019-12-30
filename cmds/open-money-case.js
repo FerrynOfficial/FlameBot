@@ -1,11 +1,11 @@
-exports.run = async(client, message, args) => {
+xports.run = async(client, message, args) => {
     const Discord = require('discord.js')
     var embed = new Discord.RichEmbed()
     var embed1 = new Discord.RichEmbed()
     var author = message.author;
     var caseRole = message.guild.roles.find('660919914244210709')
     var replies = ['2000💶','2500💶', '3000💶', '3500💶', '4000💶', '4500💶', '5000💶','5500💶', '6000💶']
-    var result = Math.floor(Math.random() * replies.length)
+    var result = Math.floor((Math.random() * replies.length))
 
     if(!caseRole) {
         message.channel.send('У Вас нету кейсов для открытия!')
