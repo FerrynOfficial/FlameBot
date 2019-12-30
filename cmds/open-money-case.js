@@ -4,19 +4,15 @@ exports.run = async(client, message, args) => {
     var embed1 = new Discord.RichEmbed()
     var author = message.author;
     var caseRole = message.guild.roles.find('660919914244210709')
-function randomIntInc(low, high) {
-    return Math.floor(Math.random() * (high - low + 1) + low);
-    var money = randomIntInc(2000, 6000)
-    var replies = [`Пользователь ${author} открыл Денежный Кейс и выиграл **${money}**💶!`,`Пользователь ${author} открыл Денежный Кейс и выиграл **${money}**💶!`]
+    var replies = ['2000💶','2500💶', '3000💶', '3500💶', '4000💶', '4500💶', '5000💶','5500💶', '6000💶']
     var result = Math.floor(Math.random() * replies.length)
-}
 
     if(!caseRole) {
         message.channel.send('У Вас нету кейсов для открытия!')
         return
     }
     embed.setAuthor(message.author.username, message.author.avatarURL)
-    embed.setDescription(replies[result])
+    embed.setDescription(`**Пользователь ${author} открыл Денежный Кейс, и выиграл ${replies[result]}**`)
     embed.setColor('RANDOM')
     embed.setThumbnail('https://cdn.discordapp.com/attachments/660855844010983434/661249051626438686/007-money-bag.png')
     message.channel.send(embed)
