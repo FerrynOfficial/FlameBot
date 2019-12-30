@@ -1,4 +1,4 @@
-xports.run = async(client, message, args) => {
+exports.run = async(client, message, args) => {
     const Discord = require('discord.js')
     var embed = new Discord.RichEmbed()
     var embed1 = new Discord.RichEmbed()
