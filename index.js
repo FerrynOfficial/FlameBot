@@ -45,13 +45,6 @@ fs.readdir('./cmds/', (err, files) => {
     })
 })
 client.on('message', message => {
-    
-    if(message.content.toLowerCase() || message.content.toUpperCase() === 'Привет')
-        message.reply('qq')
-    return
-    
-});
-client.on('message', message => {
     let msg = message.content.toLowerCase() || message.content.toUpperCase()
     if(!msg.startsWith(client.prefix)) return;
     if(message.author.bot) return;
