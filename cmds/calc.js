@@ -1,7 +1,7 @@
 const math = require('mathjs')
 const Discord = require('discord.js')
 exports.run = (client, message, args, tools) => {
-     if(![args0]) return message.channel.send('Укажите пример на который хотите получить ответ.')
+     if(!args[0]) return message.channel.send('Укажите пример на который хотите получить ответ.')
 
      let resp;
      try {
