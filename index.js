@@ -47,7 +47,7 @@ fs.readdir('./cmds/', (err, files) => {
 client.on('message', message => {
     
     if(message.content.toLowerCase() || message.content.toUpperCase() === 'Привет')
-        message.reply('Приветики!')
+        message.reply('qq')
     return
     
 });
