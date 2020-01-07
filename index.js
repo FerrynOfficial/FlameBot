@@ -48,6 +48,8 @@ client.on('message', message => {
     
     if(message.content.toLowerCase() || message.content.toUpperCase() === 'Привет')
         message.reply('Приветики!')
+    return
+    
 });
 client.on('message', message => {
     let msg = message.content.toLowerCase() || message.content.toUpperCase()
