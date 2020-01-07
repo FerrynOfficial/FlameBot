@@ -5,7 +5,7 @@ exports.run = (client, message, args, tools) => {
 
      let resp;
      try {
-         resp = math.eval(args.join(' '))
+         resp = math.evaluate(args.join(' '))
      } catch (e) {
          message.channel.send('Возникла ошибка.')
          return
