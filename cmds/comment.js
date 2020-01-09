@@ -7,7 +7,7 @@ exports.run = (client, message, args) => {
     }
     var commentAuthor = message.author;
 
-    const comment = args.slice(1).join('')
+    const comment = args.slice(0).join('')
     if(!comment) {
         message.channel.send('Напишите Ваш комментарий.')
         return
@@ -16,7 +16,7 @@ exports.run = (client, message, args) => {
     let embed = new Discord.RichEmbed()
     .setTitle('**Комментарий**')
     .setDescription(comment)
-    .addField('**Автор**', commentAuthor, true)
+    .addField('**От пользователя**', commentAuthor, true)
     .setColor('RANDOM')
     channel.send(embed)
     message.react('✅')
