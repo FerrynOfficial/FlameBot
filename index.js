@@ -14,7 +14,7 @@ client.on('ready', () => {
     }
 })
 client.on('message', message => {
-    if(message.content.toLowerCase || message.content.toUpperCase === 'L&D')
+    if(message.content.toLowerCase() || message.content.toUpperCase() === 'L&D')
     message.react('👍')
     message.react('👎')
 })
