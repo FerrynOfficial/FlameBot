@@ -15,8 +15,9 @@ client.on('ready', () => {
 })
 client.on('message', message => {
     if(message.content.toLowerCase() || message.content.toUpperCase() === 'L&D')
-    message.react('👍')
-    message.react('👎')
+    message.react('👍');
+    message.react('👎');
+    return
 })
 client.prefix = 'f!'
 client.commands = new Discord.Collection();
