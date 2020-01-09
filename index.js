@@ -13,12 +13,6 @@ client.on('ready', () => {
         client.user.setActivity('на FlameCommunity 2.0 | Слушает f!help', {url: 'https://twitch.tv/username'})
     }
 })
-client.on('message', message => {
-    if(message.content.toLowerCase() || message.content.toUpperCase() === 'L&D')
-    message.react('👍');
-    message.react('👎');
-    return
-})
 client.prefix = 'f!'
 client.commands = new Discord.Collection();
 fs.readdir('./cmds/', (err, files) => {
