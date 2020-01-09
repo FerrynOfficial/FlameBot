@@ -7,7 +7,7 @@ exports.run = (client, message, args) => {
     }
     var commentAuthor = message.author;
 
-    const comment = args.slice(0).join('')
+    const comment = args.slice(0).join(' ')
     if(!comment) {
         message.channel.send('Напишите Ваш комментарий.')
         return
