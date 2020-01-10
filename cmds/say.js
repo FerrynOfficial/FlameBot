@@ -6,7 +6,7 @@ exports.run = (client, message, args) => {
         if(!text) return message.reply('error')
         var embed = new Discord.RichEmbed()
         .setDescription(text)
-        .setColor('RANDOM')
+        .setThumbnail('https://cdn.discordapp.com/attachments/652623806019534868/665260222218108966/image0.png')
         message.channel.send(embed)
         message.delete()
        }      
