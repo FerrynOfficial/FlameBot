@@ -35,7 +35,7 @@ fs.readdir('./cmds/', (err, files) => {
         .setTitle('Добро Пожаловать!')
         .setDescription(`Добро пожаловать, ${member}, на сервер **FlameCommunity 2.0**!`)
         .setColor('#006400')
-        .setThumbnail(`${member.avatarURL}`)
+        .setThumbnail(member.avatarURL)
         channel.send(embed)
     })
 })
