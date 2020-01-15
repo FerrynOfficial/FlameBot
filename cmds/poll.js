@@ -1,17 +1,22 @@
 exports.run = (client, message, args) => {
     const Discord = require('discord.js')
-    var poll = args.slice(0).join(' ')
+    const ms = require('ms')
+    var poll = args.slice(1).join(' ')
+    var pollTime = args[0]
+    if(!pollTime) return 
     if(!poll) return message.reply('Укажите вопрос!')
-    let embed = new Discord.RichEmbed()
+    var embed = new Discord.RichEmbed()
     .setTitle('📊Опрос / Голосование')
     .setDescription(poll)
-    .setColor('RANDOM')
-    .setFooter('Что бы проголосовать, нажмите на одну из реакций ниже!')
+    .setFooter(`Опрос от ${message.author.username} | Осталось: ${pollTime}`)
     message.channel.send({ embed }).then((message) => {
         message.react('👍')
             .then(() => message.react('👎'))
         });
-    message.delete()
+        setTimeout(function () {
+            embed.setFooter('Голосование окончено!')
+            message.edit(embed)
+        })
 }
 exports.help = {
     name: 'poll'
