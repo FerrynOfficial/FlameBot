@@ -5,7 +5,8 @@ exports.run = (client, message, args) => {
     var pollTime = args[0]
     if(!pollTime) return 
     if(!poll) return message.reply('Укажите вопрос!')
-    var embed = new Discord.RichEmbed()
+    var embed1 = new Discord.RichEmbed()    
+
     .setTitle('📊Опрос / Голосование')
     .setDescription(poll)
     .setFooter(`Опрос от ${message.author.username} | Осталось: ${pollTime}`)
@@ -14,8 +15,8 @@ exports.run = (client, message, args) => {
             .then(() => message.react('👎'))
         });
         setTimeout(function () {
-            embed.setFooter('Голосование окончено!')
-            message.edit(embed)
+            embed1.setDescription('Голосование окончено!')
+            message.channel.send(embed1)
         })
 }
 exports.help = {
