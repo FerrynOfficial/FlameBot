@@ -33,7 +33,7 @@ fs.readdir('./cmds/', (err, files) => {
         if(!channel) return
         var embed = new Discord.RichEmbed()
         .setTitle('Добро Пожаловать!')
-        .setDescription(`Добро пожаловать, ${member}!\nВы наш **${guild.members.size}** участник!`)
+        .setDescription(`Добро пожаловать, ${member}!\nВы наш **${message.guild.members.size}** участник!`)
         .setColor('#006400')
         .setThumbnail(`${member.avatarURL}`)
         channel.send(embed)
