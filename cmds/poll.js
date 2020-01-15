@@ -5,7 +5,8 @@ exports.run = (client, message, args) => {
     var pollTime = args[0]
     if(!pollTime) return 
     if(!poll) return message.reply('Укажите вопрос!')
-    var embed1 = new Discord.RichEmbed()    
+    var embed1 = new Discord.RichEmbed()
+    var embed = new Discord.RichEmbed() 
 
     .setTitle('📊Опрос / Голосование')
     .setDescription(poll)
