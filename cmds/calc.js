@@ -12,8 +12,6 @@ exports.run = (client, message, args, tools) => {
      }
 
      let embed = new Discord.RichEmbed()
-     .setColor('#FFFF00')
-     .setTitle('**Математический Пример**')
      .addField('Ответ', `\`\`\`js\n${resp}\`\`\``)
      message.channel.send(embed)
 }
