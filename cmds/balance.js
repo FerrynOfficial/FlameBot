@@ -5,8 +5,11 @@ exports.run = async (client, message, args, config) => {
     let user = message.mentions.members.first() || message.author
     let money = await db.fetch(`money_${user.id}`)
     if (money === null) money = 0;
-
-    message.channel.send(`${user} у Вас ${money}!`)
+    
+    let embed = new Discord.RichEmbed()
+    .setAuthor(message.author.username, message.author.avatarURL)
+    .setDescription(`Баланс: **${money}$**`)
+    message.channel.send(embed)
 }
 exports.help = {
     name: "balance"
