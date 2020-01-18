@@ -10,12 +10,14 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.5.1",
+    "firebase-admin": "^8.9.0",
     "fs": "0.0.1-security",
     "mathjs": "^6.4.0",
     "moment": "^2.24.0",
     "ms": "^2.1.2",
     "node-fetch": "^2.6.0",
     "node-gyp": "^6.0.1",
+    "quick.db": "^7.0.0-b22",
     "rebuild": "^0.1.2",
     "superagent": "^5.1.2"
   }
