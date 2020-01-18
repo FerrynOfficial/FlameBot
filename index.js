@@ -1,6 +1,7 @@
 global.Discord = require('discord.js')
 const client = new Discord.Client();
 const fs = require('fs')
+const db = require("quick.db")
 global.ms = require('ms')
 const superagent = require('superagent')
 const config = require("./config.json")
