@@ -34,7 +34,7 @@ exports.run = async (client, message, args, config) => {
         .addField("Собрано", amount, true)
         message.channel.send(embed).catch(() => {});
         
-        db.add(`money_${user.id}, 500`)
+        db.add(`money_${user.id}`, 500)
         db.set(`daily_${user.id}`, Date.now())
     }
 }
