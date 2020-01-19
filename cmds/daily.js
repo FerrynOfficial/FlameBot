@@ -1,4 +1,3 @@
-
 exports.run = async (client, message, args, config) => {
     const Discord = require("discord.js")
     const db = require("quick.db")
