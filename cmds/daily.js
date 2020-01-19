@@ -16,6 +16,7 @@ exports.run = async (client, message, args, config) => {
         .setColor("FF0000")
         .setDescription(`Вы уже приходили за наградой сегодня. Прихоходите через **${time.hours}**ч **${time.minutes}**м **${time.seconds}**с.`)
         message.channel.send(embed)
+        return
 
         let embed1 = new Discord.RichEmbed()
         .setAuthor(message.author.username, message.author.avatarURL)
