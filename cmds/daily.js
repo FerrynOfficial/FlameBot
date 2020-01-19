@@ -30,7 +30,7 @@ exports.run = async (client, message, args, config) => {
         let embed = new Discord.RichEmbed()
         .setAuthor(message.author.username, message.author.avatarURL)
         .setColor("FF0000")
-        .setDescription(`Вы уже приходили за наградой сегодня. Прихоходите через **${time.hours}**ч **${time.minutes}**м **${time.seconds}**с.`)
+        .setDescription(`Вы уже приходили за наградой сегодня.`)
         message.channel.send(embed).catch(() => {});
     }
 }
