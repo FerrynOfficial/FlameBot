@@ -1,9 +1,10 @@
+
 exports.run = async (client, message, args, config) => {
     const Discord = require("discord.js")
     const db = require("quick.db")
 
     let user = message.mentions.members.first() || message.author
-    let money = await db.fetch(`money_${user.id}`)
+     let money = db.fetch(`money_${message.guild.id}_${message.author.id}`);
     if (money === null) money = 0;
     
     let embed = new Discord.RichEmbed()
