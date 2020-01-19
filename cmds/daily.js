@@ -1,3 +1,4 @@
+
 exports.run = async (client, message, args, config) => {
     const Discord = require("discord.js")
     const db = require("quick.db")
@@ -11,19 +12,12 @@ exports.run = async (client, message, args, config) => {
     if (daily !== null && timeout - (Date.now() - daily) > 0) {
         let time = ms(timeout - (Date.now () - daily))
 
-        let embed = new Discord.RichEmbed()
-        .setAuthor(message.author.username, message.author.avatarURL)
-        .setColor("FF0000")
-        .setDescription(`Вы уже приходили за наградой сегодня. Прихоходите через **${time.hours}**ч **${time.minutes}**м **${time.seconds}**с.`)
-        message.channel.send(embed)
-        return
-
         let embed1 = new Discord.RichEmbed()
         .setAuthor(message.author.username, message.author.avatarURL)
         .setDescription("**Ежедневная награда**")
         .setColor("006400")
         .addField("Собрано", amount, true)
-        message.channel.send(embed1)
+        message.channel.send(embed1).catch(() => {});
 
         db.add(`money_${message.author.id}, amount`)
         db.set(`daily_${message.author.id}`, Date.now())
@@ -31,6 +25,13 @@ exports.run = async (client, message, args, config) => {
         if (err) {
             console.log(err)
         }
+    }
+    else {
+        let embed = new Discord.RichEmbed()
+        .setAuthor(message.author.username, message.author.avatarURL)
+        .setColor("FF0000")
+        .setDescription(`Вы уже приходили за наградой сегодня. Прихоходите через **${time.hours}**ч **${time.minutes}**м **${time.seconds}**с.`)
+        message.channel.send(embed).catch(() => {});
     }
 }
 exports.help = {
