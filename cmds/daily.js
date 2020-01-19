@@ -26,8 +26,12 @@ exports.run = async (client, message, args, config) => {
 
         db.add(`money_${message.author.id}, amount`)
         db.set(`daily_${message.author.id}`, Date.now())
+        
+        if (err) {
+            console.log(err)
+        }
     }
 }
 exports.help = {
-    name: "daily"
+    name: 'daily'
 }
