@@ -2,7 +2,9 @@ exports.run = async (client, message, args, config) => {
     const Discord = require("discord.js")
     const db = require("quick.db")
     const ms = require("ms")
-
+    const user = message.mentions.members.first() || message.author
+    const money = await db.fetch(`money_${user.id}`)
+    
     let timeout = 86400000
     let amount = 500
 
@@ -33,8 +35,8 @@ exports.run = async (client, message, args, config) => {
         .addField("Собрано", amount, true)
         message.channel.send(embed).catch(() => {});
         
-        db.add(`money_${message.author.id}, amount`)
-        db.set(`daily_${message.author.id}`, Date.now())
+        db.add(`money_${user.id}, amount`)
+        db.set(`daily_${user.id}`, Date.now())
     }
 }
 exports.help = {
