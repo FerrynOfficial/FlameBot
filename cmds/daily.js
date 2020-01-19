@@ -17,13 +17,9 @@ exports.run = async (client, message, args, config) => {
 
         let embed1 = new Discord.RichEmbed()
         .setAuthor(message.author.username, message.author.avatarURL)
-        .setDescription("**Ежедневная награда**")
-        .setColor("006400")
-        .addField("Собрано", amount, true)
+        .setDescription("Вы уже приходили за наградой сегодня!")
+        .setColor("FF0000")
         message.channel.send(embed1).catch(() => {});
-
-        db.add(`money_${message.author.id}, amount`)
-        db.set(`daily_${message.author.id}`, Date.now())
         
         if (err) {
             console.log(err)
@@ -32,9 +28,13 @@ exports.run = async (client, message, args, config) => {
     else {
         let embed = new Discord.RichEmbed()
         .setAuthor(message.author.username, message.author.avatarURL)
-        .setColor("FF0000")
-        .setDescription(`Вы уже приходили за наградой сегодня.`)
+        .setColor("006400")
+        .setDescription(`**Ежедневная награда**`)
+        .addField("Собрано", amount, true)
         message.channel.send(embed).catch(() => {});
+        
+        db.add(`money_${message.author.id}, amount`)
+        db.set(`daily_${message.author.id}`, Date.now())
     }
 }
 exports.help = {
