@@ -8,6 +8,10 @@ exports.run = async (client, message, args, config) => {
     let amount = 500
 
     let daily = await db.fetch(`daily_${message.author.id}`)
+    
+    if (daily == null) {
+      daily = 0
+    }
 
     if (daily !== null && timeout - (Date.now() - daily) > 0) {
         let time = ms(timeout - (Date.now () - daily))
