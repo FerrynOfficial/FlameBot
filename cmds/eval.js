@@ -1,7 +1,10 @@
 exports.run = (client, message, args) => {
     const db = require('quick.db')
     const Discord = require('discord.js')
-    if(message.author.id !== client.owner) return;
+    if(message.author.id !== client.owner) {
+        message.react('‼️')
+        return
+    }
     function clean(text) {
         if(typeof(text) === 'string') 
             return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203))
