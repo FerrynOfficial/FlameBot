@@ -14,6 +14,14 @@ client.on('ready', () => {
         client.user.setActivity('на FlameCommunity 2.0 | Слушает f!help', {url: 'https://twitch.tv/username'})
     }
 })
+    var lchannel = message.guild.channels.find(`name`, 'logs')
+    if (!lchannel) return
+    let embed = new Discord.RichEmbed()
+    .setAuthor(message.author.username, message.author.avatarURL)
+    .setDescription(`**Сообщение было удалено**\n**Содержание:** ${message.content}\n**Автор:** ${message.author}`)
+    .setColor('#FF0000')
+    lchannel.send(embed)
+})
 client.prefix = 'f!'
 client.commands = new Discord.Collection();
 fs.readdir('./cmds/', (err, files) => {
