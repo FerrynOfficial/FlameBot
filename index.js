@@ -14,6 +14,7 @@ client.on('ready', () => {
         client.user.setActivity('на FlameCommunity 2.0 | Слушает f!help', {url: 'https://twitch.tv/username'})
     }
 })
+client.on('messageDelete', message => {
     var lchannel = message.guild.channels.find(`name`, 'logs')
     if (!lchannel) return
     let embed = new Discord.RichEmbed()
