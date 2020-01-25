@@ -47,6 +47,7 @@ exports.run = async (client, message, args) => {
     .setColor('006400')
     .setDescription(`Пользователь ${kickmember} был успешно выгнан!`)
     message.channel.send(embed)
+    message.guild.members.get(kickmember.id).kick(reason)
 
     var logchannel = message.guild.channels.find(`name`, 'logs')
     if (!logchannel) {
@@ -63,7 +64,7 @@ exports.run = async (client, message, args) => {
       .addField('Модератор', message.author, true)
       .addField('Канал', message.channel, true)
       .setColor('FF0000')
-      logchannel.send(logs).then(message.guild.members.get(kickmember.id).kick(reason))
+      logchannel.send(logs)
     }
 }
 exports.help = {
