@@ -63,8 +63,7 @@ exports.run = async (client, message, args) => {
       .addField('Модератор', message.author, true)
       .addField('Канал', message.channel, true)
       .setColor('FF0000')
-      logchannel.send(logs)
-      await message.guild.members.get(kickmember.id).kick(reason)
+      logchannel.send(logs).then(message.guild.members.get(kickmember.id).kick(reason))
     }
 }
 exports.help = {
