@@ -51,8 +51,12 @@ fs.readdir('./cmds/', (err, files) => {
 })
 client.on("message",msg => {
 if (msg.attachments.size > 0) {
-var ej = client.emojis.find(emoji => emoji.name === "boost");
+var ej = client.emojis.find(emoji => emoji.name === "FC_like");
+var emoji = client.emojis.find(emoji => emoji.name === "FC_dislike");
 msg.react(ej);
+msg.react(emoji);
+msg.react('❤️')
+msg.react('⭐️')
 }
 });
 client.on('message', message => {
