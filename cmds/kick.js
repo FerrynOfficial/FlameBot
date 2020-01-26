@@ -46,8 +46,7 @@ exports.run = async (client, message, args) => {
     .setColor('006400')
     .setDescription(`Пользователь ${kickmember} был успешно выгнан!`)
     message.channel.send(embed)
-      message.guild.members.get(kickmember.id).kick(reason)
-    }
+    message.guild.members.get(kickmember.id).kick(reason)
 }
 exports.help = {
     name: 'kick'
