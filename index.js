@@ -23,11 +23,6 @@ client.on('messageDelete', message => {
     .setColor('#FF0000')
     lchannel.send(embed)
 })
-client.on('message', messsage => {
-    if(message.content.toLowerCase === "L&D" || message.content.toUpperCase === "L&D")
-        message.react('👍')
-        message.react('👎')
-})
 client.prefix = 'f!'
 client.commands = new Discord.Collection();
 fs.readdir('./cmds/', (err, files) => {
@@ -55,6 +50,9 @@ fs.readdir('./cmds/', (err, files) => {
     })
 })
 client.on('message', message => {
+    if(message.content.toLowerCase === "L&D" || message.content.toUpperCase === "L&D")
+        message.react('👍')
+        message.react('👎')
     let msg = message.content.toLowerCase() || message.content.toUpperCase()
     if(!msg.startsWith(client.prefix)) return;
     if(message.author.bot) return;
