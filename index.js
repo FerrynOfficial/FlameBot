@@ -49,6 +49,12 @@ fs.readdir('./cmds/', (err, files) => {
         channel.send(embed)
     })
 })
+client.on("message",msg => {
+if (msg.attachments.size > 0) {
+var ej = client.emojis.find(emoji => emoji.name === "yes2");
+msg.react(ej);
+}
+});
 client.on('message', message => {
     let msg = message.content.toLowerCase() || message.content.toUpperCase()
     if(!msg.startsWith(client.prefix)) return;
