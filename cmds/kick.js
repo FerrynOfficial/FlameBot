@@ -47,9 +47,8 @@ exports.run = async (client, message, args) => {
     .setColor('006400')
     .setDescription(`Пользователь ${kickmember} был успешно выгнан!`)
     message.channel.send(embed)
-    message.guild.members.get(kickmember.id).kick(reason)
 
-    var logchannel = message.guild.channels.find(`name`, 'logs')
+    var logchannel = message.guild.channels.get('633216142286127114')
     if (!logchannel) {
       let error = new Discord.RichEmbed()
       .setAuthor(message.author.username, message.author.avatarURL)
@@ -65,6 +64,7 @@ exports.run = async (client, message, args) => {
       .addField('Канал', message.channel, true)
       .setColor('FF0000')
       logchannel.send(logs)
+      await message.guild.members.get(kickmember.id).kick(reason)
     }
 }
 exports.help = {
