@@ -54,7 +54,7 @@ if (message.attachments.size > 0) {
 var ej = client.emojis.find(emoji => emoji.name === "FC_like");
 var emoji = client.emojis.find(emoji => emoji.name === "FC_dislikes");
 message.react(ej)
-message.react('emoji')
+message.react(emoji)
 message.react('❤️')
 }
 });
