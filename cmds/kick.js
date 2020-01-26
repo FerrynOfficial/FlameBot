@@ -43,27 +43,9 @@ exports.run = async (client, message, args) => {
         return
     }
     var embed = new Discord.RichEmbed()
-    .setTitle('**Ошибка при выполнении**')
     .setColor('006400')
     .setDescription(`Пользователь ${kickmember} был успешно выгнан!`)
     message.channel.send(embed)
-
-    var logchannel = message.guild.channels.get('633216142286127114')
-    if (!logchannel) {
-      let error = new Discord.RichEmbed()
-      .setTitle('**Ошибка при выполнении**')
-      .setDescription('`ВНИМАНИЕ: Канал для логов не обнаружен!`')
-      .setColor('FF0000')
-      message.channel.send(error)
-      return
-
-      let logs = new Discord.RichEmbed()
-      .setTitle('Кик пользователя!')
-      .addField('Пользователь', kickmember, true)
-      .addField('Модератор', message.author, true)
-      .addField('Канал', message.channel, true)
-      .setColor('FF0000')
-      logchannel.send(logs)
       message.guild.members.get(kickmember.id).kick(reason)
     }
 }
