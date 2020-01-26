@@ -56,7 +56,6 @@ var emoji = client.emojis.find(emoji => emoji.name === "FC_dislike");
 msg.react(ej);
 msg.react(emoji);
 msg.react('❤️')
-msg.react('⭐️')
 }
 });
 client.on('message', message => {
