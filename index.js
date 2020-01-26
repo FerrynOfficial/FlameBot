@@ -50,9 +50,6 @@ fs.readdir('./cmds/', (err, files) => {
     })
 })
 client.on('message', message => {
-    if(message.content.toLowerCase === "L&D" || message.content.toUpperCase === "L&D")
-        message.react('👍')
-        message.react('👎')
     let msg = message.content.toLowerCase() || message.content.toUpperCase()
     if(!msg.startsWith(client.prefix)) return;
     if(message.author.bot) return;
