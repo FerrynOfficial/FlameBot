@@ -58,6 +58,14 @@ message.react(emoji)
 message.react('❤️')
 }
 });
+client.on("message",msg => {
+    if (msg.content === "L&D") {
+        var like = client.emojis.find(emoji => emoji.name === "FC_like");
+        var dislike = client.emojis.find(emoji => emoji.name === "FC_dislikes");
+        msg.react(like)
+        msg.react(dislike)
+    }
+});
 client.on('message', message => {
     let msg = message.content.toLowerCase() || message.content.toUpperCase()
     if(!msg.startsWith(client.prefix)) return;
