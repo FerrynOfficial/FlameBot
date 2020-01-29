@@ -62,7 +62,9 @@ client.on("message",msg => {
     if (msg.content === "L&D") {
         var like = client.emojis.find(emoji => emoji.name === "FC_like");
         var dislike = client.emojis.find(emoji => emoji.name === "FC_dislikes");
-        msg.react(like).then(msg => msg.react(dislike));
+        msg.react(like).then((msg) => {
+            msg.react(dislike)
+        });
     }
 });
 client.on('message', message => {
