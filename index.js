@@ -59,7 +59,7 @@ message.react('❤️')
 }
 });
 client.on("message",msg => {
-    const args = message.content.slice(client.prefix.length).trim().split(/ +/g);
+    const args = msg.content.slice(client.prefix.length).trim().split(/ +/g);
     const text = args.slice(1).join(" ")
     if (text === "L&D") {
         var like = client.emojis.find(emoji => emoji.name === "FC_like");
