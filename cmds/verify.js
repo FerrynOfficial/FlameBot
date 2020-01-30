@@ -12,6 +12,7 @@ exports.run = async(client, message, args, tools) => {
     .setDescription('Вы не робот? Для того чтобы пройти капчу, нажмите на реакцию ниже.')
     .setColor('FF0000')
     message.channel.send(embed).then((message) => message.react('✅'));
+    message.delete();
 
     const collector = message.createReactionCollector((reaction, user) => 
     user.id === message.author.id &&
@@ -20,8 +21,8 @@ exports.run = async(client, message, args, tools) => {
         const chosen = reaction.emoji.name;
         const role = message.guild.roles.get("619878513041997824")
         if(chosen === "✅"){
-            message.delete().then((vUser) => vUser.addRole(role));
-            vUser.send("Вы были успешно зарегистрированы на сервере! Спасибо что вы с нами!")
+            message.delete().then(message.member.addRole(role));
+            message.member.send("Вы были успешно зарегистрированы на сервере! Спасибо что вы с нами!")
         }
 
     })
