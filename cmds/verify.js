@@ -23,6 +23,9 @@ exports.run = async(client, message, args, tools) => {
         if(chosen === "✅"){
             message.delete().then(message.member.addRole(role));
             message.member.send("Вы были успешно зарегистрированы на сервере! Спасибо что вы с нами!")
+        } catch (e) {
+            console.log(e)
+            return
         }
 
     })
