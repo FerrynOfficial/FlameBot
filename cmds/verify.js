@@ -20,7 +20,7 @@ exports.run = async(client, message, args, tools) => {
     ).once("collect", reaction => {
         const chosen = reaction.emoji.name;
         if(chosen === "✅"){
-            message.delete().then(message.member.addRole("619878513041997824").then((msg) => msg.delete());
+            message.delete().then(message.member.addRole("619878513041997824")).then((msg) => msg.delete());
             message.member.send("Вы были успешно зарегистрированы на сервере! Спасибо что вы с нами!")
 return
         }
