@@ -6,6 +6,7 @@ exports.run = async(client, message, args, tools) => {
     if(message.channel == vChannel) {
         message.delete()
     }
+
     let embed = new Discord.RichEmbed()
     .setAuthor(message.author.username, message.author.avatarURL)
     .setDescription('Вы не робот? Для того чтобы пройти капчу, нажмите на реакцию ниже.')
@@ -23,9 +24,7 @@ exports.run = async(client, message, args, tools) => {
             message.delete().then(message.member.addRole(verify)).then((message) => message.delete());
             message.member.send("Вы были успешно зарегистрированы на сервере! Спасибо что вы с нами!")
 return
-    }
         }
-
     })
 }
 exports.help = {
