@@ -19,9 +19,8 @@ exports.run = async(client, message, args, tools) => {
     reaction.emoji.name === "✅"
     ).once("collect", reaction => {
         const chosen = reaction.emoji.name;
-        const verify = message.guild.roles.get("619878513041997824")
         if(chosen === "✅"){
-            message.delete().then(message.member.addRole(verify)).then((msg) => msg.delete());
+            message.delete().then(message.member.addRole("619878513041997824").then((msg) => msg.delete());
             message.member.send("Вы были успешно зарегистрированы на сервере! Спасибо что вы с нами!")
 return
         }
