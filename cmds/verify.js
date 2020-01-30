@@ -1,11 +1,11 @@
+
 exports.run = async(client, message, args, tools) => {
     const Discord = require("discord.js")
     const vUser = message.author;
     const vChannel = message.guild.channels.get("672188144921083907")
     if(message.channel == vChannel) {
         message.delete()
-        return
-    }
+       
 
     let embed = new Discord.RichEmbed()
     .setAuthor(message.author.username, message.author.avatarURL)
@@ -23,6 +23,8 @@ exports.run = async(client, message, args, tools) => {
         if(chosen === "✅"){
             message.delete().then(message.member.addRole(verify)).then((message) => message.delete());
             message.member.send("Вы были успешно зарегистрированы на сервере! Спасибо что вы с нами!")
+return
+    }
         }
 
     })
