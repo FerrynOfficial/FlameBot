@@ -1,8 +1,8 @@
-exports.run = async (client, message, args, tools) => {
+exports.run = async(client, message, args, tools) => {
     const Discord = require("discord.js")
     const vUser = message.author;
     const vChannel = message.guild.channels.get("672188144921083907")
-    if(message.channel === vChannel) {
+    if(message.channel == vChannel) {
         message.delete()
         return
     }
@@ -11,8 +11,7 @@ exports.run = async (client, message, args, tools) => {
     .setAuthor(message.author.username, message.author.avatarURL)
     .setDescription('Вы не робот? Для того чтобы пройти капчу, нажмите на реакцию ниже.')
     .setColor('FF0000')
-    message.channel.send(embed)
-    message.react('✅')
+    message.channel.send(embed).then((message) => message.react('✅'));
 
     const collector = message.createReactionCollector((reaction, user) => 
     user.id === message.author.id &&
@@ -21,7 +20,7 @@ exports.run = async (client, message, args, tools) => {
         const chosen = reaction.emoji.name;
         const role = message.guild.roles.get("619878513041997824")
         if(chosen === "✅"){
-            vUser.addRole(role)
+            await(vUser.addRole(role))
             message.delete()
             vUser.send("Вы были успешно зарегистрированы на сервере! Спасибо что вы с нами!")
         }
