@@ -20,8 +20,7 @@ exports.run = async(client, message, args, tools) => {
         const chosen = reaction.emoji.name;
         const role = message.guild.roles.get("619878513041997824")
         if(chosen === "✅"){
-            await(vUser.addRole(role))
-            message.delete()
+            message.delete().then((vUser) => vUser.addRole(role));
             vUser.send("Вы были успешно зарегистрированы на сервере! Спасибо что вы с нами!")
         }
 
