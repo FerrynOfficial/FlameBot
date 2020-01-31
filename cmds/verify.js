@@ -3,28 +3,19 @@ exports.run = async(client, message, args, tools) => {
     const Discord = require("discord.js")
     const vUser = message.author;
     const vChannel = message.guild.channels.get("672188144921083907")
-    if(message.channel == vChannel) {
+    if(!message.channel === vChannel) {
         message.delete()
+        return
     }
-
+    const verify = message.guild.roles.get("672751848490401799")
+    const newbie = message.guild.roles.get("619878513041997824")
     let embed = new Discord.RichEmbed()
     .setAuthor(message.author.username, message.author.avatarURL)
-    .setDescription('Вы не робот? Для того чтобы пройти капчу, нажмите на реакцию ниже.')
-    .setColor('FF0000')
-    message.channel.send(embed).then((m) => m.react('✅'));
+    .setDescription('Верификация была успешно пройдена! Спасибо что вы с нами!')
+    .setColor('006400')
+    message.member.send(embed)
+    message.member.removeRole(verify).then(message.member.addRole(newbie))
     message.delete();
-
-    const collector = message.createReactionCollector((reaction, user) => 
-    user.id === message.author.id &&
-    reaction.emoji.name === "✅"
-    ).once("collect", reaction => {
-        const chosen = reaction.emoji.name;
-        if(chosen === "✅"){
-            message.delete().then(message.member.addRole("619878513041997824")).then((msg) => msg.delete());
-            message.member.send("Вы были успешно зарегистрированы на сервере! Спасибо что вы с нами!")
-return
-        }
-    })
 }
 exports.help = {
     name: 'verify'
