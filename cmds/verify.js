@@ -4,7 +4,7 @@ exports.run = async(client, message, args, tools) => {
     const vUser = message.author;
     const vChannel = message.guild.channels.get("672188144921083907")
     const newbie = message.guild.roles.get("619878513041997824")
-    if(message.member.role.has(newbie)) {
+    if(message.member.hasRole(newbie)) {
         message.delete()
         return
     }
