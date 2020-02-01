@@ -6,6 +6,7 @@ exports.run = async(client, message, args, tools) => {
     const newbie = message.guild.roles.get("619878513041997824")
     if(message.member.roles.has("619878513041997824")) {
         message.delete()
+        message.member.send("**⚠️Вы уже проходили верификацию!**")
         return
     }
    
