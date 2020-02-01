@@ -31,6 +31,7 @@ let embed = new Discord.RichEmbed()
 .setColor('FF0000')
 .addField("**Вопрос задал**", qAuthor, true)
 aChannel.send(embed)
+message.react(emoji)
 message.member.send(`${emoji} Ваш вопрос был успешно отправлен и в скором времени на него ответит администрация!`)
 }
 exports.help = {
