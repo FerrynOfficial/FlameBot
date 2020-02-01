@@ -1,2 +1,2 @@
-# GameErr.Bot-Discord
-My own Discord bot.
+# Flame Premium / Flame Global
+Discord bots by TheFerryn#0001
