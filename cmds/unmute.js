@@ -28,14 +28,6 @@ exports.run = async(client, message, args) => {
         message.channel.send(warn2)
         return               
     }
-    if(!muser.roles.has(muterole)) {
-        let warn3 = new Discord.RichEmbed()
-        .setAuthor(message.author.username, message.author.avatarURL)
-        .setDescription("Данный пользователь не замучен!")
-        .setColor('FF0000')
-        message.channel.send(warn3)
-        return
-    }
     embed.setAuthor(message.author.username, message.author.avatarURL)
     embed.setDescription(`Пользователь был успешно размучен!`)
     embed.setColor('FF0000')
