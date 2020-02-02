@@ -39,14 +39,13 @@ fs.readdir('./cmds/', (err, files) => {
     })
 
      client.on('guildMemberAdd', member =>{
-        const channel = member.guild.channels.find(channel => channel.name === '〔👥〕новые-участники')
+        const channel = member.guild.channels.find(channel => channel.name === '┌👥｠новые-участники)
         if(!channel) return
         var embed = new Discord.RichEmbed()
         .setTitle('Добро Пожаловать!')
-        .setDescription(`Добро пожаловать, ${member}, на сервер **FlameCommunity 2.0**!`)
-        .setColor('#006400')
-        .setThumbnail(member.avatarURL)
-        channel.send(embed)
+        .setDescription(`Добро пожаловать, ${member}, на сервер **FlameCommunity 2.0**! Мы надеемя что ты останешься с нами!`)
+        .setImage("https://cdn.discordapp.com/attachments/660855844010983434/673455615237947422/rainbow.gif")
+        channel.send(`${member}`).then(channel.send(embed));
     })
 })
 client.on("message", message => {
