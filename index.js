@@ -39,7 +39,7 @@ fs.readdir('./cmds/', (err, files) => {
     })
 
      client.on('guildMemberAdd', member =>{
-        const channel = member.guild.channels.find(channel => channel.name === '┌👥｠новые-участники)
+        const channel = member.guild.channels.find(channel => channel.name === '┌👥｠новые-участники')
         if(!channel) return
         var embed = new Discord.RichEmbed()
         .setTitle('Добро Пожаловать!')
