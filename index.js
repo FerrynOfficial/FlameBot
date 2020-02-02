@@ -18,8 +18,10 @@ client.on('messageDelete', message => {
     var lchannel = message.guild.channels.find(`name`, 'logs')
     if (!lchannel) return
     let embed = new Discord.RichEmbed()
-    .setAuthor(message.author.username, message.author.avatarURL)
-    .setDescription(`**Сообщение было удалено**\n**Содержание:** ${message.content}\n**Автор:** ${message.author}`)
+    .setTitle("**Сообщение было удалено**")
+    .addField("Соддержание", `${message.content}`, true)
+    .addField("Канал", message.channel, true)
+    .addField("Автор", message.author, true)
     .setColor('#FF0000')
     lchannel.send(embed)
 })
