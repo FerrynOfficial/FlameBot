@@ -1,14 +1,13 @@
 exports.run = async(client, message, args) => {
     const Discord = require("discord.js")
-    const superagent = require("superagent")
-    const {body} = await superagent
-    .get(`https://vk.com/fckbrain`)
-    console.log(body.file)
-    if(!{body}) return message.channel.send("Ошибка, попробуйте снова!")
+    const randomPuppy = require("random-puppy")
+    const subVK = ["fckbrain"]
+    const random = subVK[Math.floor(Math.random() * subVK.length)]
 
+    const img = await randomPuppy(random)
     let embed = new Discord.RichEmbed()
-    .setColor("RANDOM")
-    .setImage(body.url)
+    .setImage(img)
+    .setURL(`https://vk.com/${random}`)
     message.channel.send(embed)
 }
 exports.help = {
